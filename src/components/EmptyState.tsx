@@ -13,7 +13,7 @@ export function EmptyState({ onAddClick }: EmptyStateProps) {
       animate={{ opacity: 1, y: 0 }}
       className="flex flex-col items-center justify-center min-h-[60vh]"
     >
-      <div className="bg-white/80 dark:bg-white/10 backdrop-blur-xl rounded-3xl border border-gray-200 dark:border-white/20 p-12 max-w-md text-center shadow-2xl">
+      <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-12 max-w-md text-center shadow-2xl">
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -31,8 +31,8 @@ export function EmptyState({ onAddClick }: EmptyStateProps) {
           </div>
         </motion.div>
 
-        <h2 className="text-gray-900 dark:text-white text-3xl mb-4 font-semibold">Your Shelf is Empty</h2>
-        <p className="text-gray-600 dark:text-white/60 mb-8">
+        <h2 className="text-white text-3xl mb-4">Your Shelf is Empty</h2>
+        <p className="text-white/60 mb-8">
           Start building your digital library by adding your first book. Track your reading progress and keep notes for each chapter.
         </p>
 
