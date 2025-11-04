@@ -29,15 +29,15 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
       onClick={() => onOpen(book)}
     >
       {/* Liquid glass card */}
-      <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-purple-500/50">
+      <div className="relative bg-white/80 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-white/20 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-purple-500/50">
         {/* Book thumbnail */}
-        <div className="aspect-[2/3] relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-blue-900/20">
+        <div className="aspect-[2/3] relative overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20">
           <ImageWithFallback
             src={book.thumbnailUrl}
             alt={book.title}
             className="w-full h-full object-cover"
           />
-          
+
           {/* Overlay on hover */}
           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
             <Button
@@ -67,13 +67,13 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
 
         {/* Book info */}
         <div className="p-4 space-y-2">
-          <h3 className="text-white line-clamp-2 min-h-[3em]">{book.title}</h3>
-          
+          <h3 className="text-gray-900 dark:text-white line-clamp-2 min-h-[3em] font-medium">{book.title}</h3>
+
           <div className="flex items-center justify-between">
             <Badge className={statusColors[book.status]}>
               {book.status}
             </Badge>
-            
+
             {/* Rating */}
             <div className="flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
@@ -82,7 +82,7 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
                   className={`w-4 h-4 ${
                     i < book.rating
                       ? 'fill-yellow-400 text-yellow-400'
-                      : 'text-white/30'
+                      : 'text-gray-300 dark:text-white/30'
                   }`}
                 />
               ))}
@@ -91,7 +91,7 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
 
           {/* Notes count */}
           {book.notes.length > 0 && (
-            <div className="text-white/60 text-sm">
+            <div className="text-gray-600 dark:text-white/60 text-sm">
               {book.notes.length} chapter note{book.notes.length !== 1 ? 's' : ''}
             </div>
           )}
