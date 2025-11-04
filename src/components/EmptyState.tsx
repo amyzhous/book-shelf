@@ -32,8 +32,8 @@ export function EmptyState({ onAddClick }: EmptyStateProps) {
           </div>
         </motion.div>
 
-        <h2 className="text-white text-3xl mb-4">Your Shelf is Empty</h2>
-        <p className="text-white/60 mb-8">
+        <h2 className="text-gray-900 dark:text-white text-3xl mb-4 font-semibold">Your Shelf is Empty</h2>
+        <p className="text-gray-700 dark:text-white/60 mb-8">
           Start building your digital library by adding your first book. Track your reading progress and keep notes for each chapter.
         </p>
 

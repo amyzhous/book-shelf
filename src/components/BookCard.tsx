@@ -67,7 +67,7 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
 
         {/* Book info */}
         <div className="relative z-10 p-4 space-y-2">
-          <h3 className="text-white line-clamp-2 min-h-[3em]">{book.title}</h3>
+          <h3 className="text-gray-900 dark:text-white line-clamp-2 min-h-[3em] font-medium">{book.title}</h3>
 
           <div className="flex items-center justify-between">
             <Badge className={statusColors[book.status]}>
@@ -82,7 +82,7 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
                   className={`w-4 h-4 ${
                     i < book.rating
                       ? 'fill-yellow-400 text-yellow-400'
-                      : 'text-white/30'
+                      : 'text-gray-400 dark:text-white/30'
                   }`}
                 />
               ))}
@@ -91,7 +91,7 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
 
           {/* Notes count */}
           {book.notes.length > 0 && (
-            <div className="text-white/60 text-sm">
+            <div className="text-gray-700 dark:text-white/60 text-sm">
               {book.notes.length} chapter note{book.notes.length !== 1 ? 's' : ''}
             </div>
           )}
