@@ -118,19 +118,21 @@ export default function App() {
             <Button
               onClick={() => setIsDark(!isDark)}
               size="icon"
-              className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white shadow-lg"
+              className="relative bg-white/[0.08] backdrop-blur-2xl border border-white/30 hover:bg-white/20 text-white shadow-[0_8px_32px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:rounded-md before:bg-gradient-to-br before:from-white/20 before:to-transparent before:opacity-50 before:pointer-events-none"
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              <span className="relative z-10">{isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}</span>
             </Button>
             <Button
               onClick={() => {
                 setEditingBook(null);
                 setIsAddDialogOpen(true);
               }}
-              className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white shadow-lg"
+              className="relative bg-white/[0.08] backdrop-blur-2xl border border-white/30 hover:bg-white/20 text-white shadow-[0_8px_32px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:rounded-md before:bg-gradient-to-br before:from-white/20 before:to-transparent before:opacity-50 before:pointer-events-none"
             >
-              <Plus className="w-5 h-5 mr-2" />
-              Add Book
+              <span className="relative z-10 flex items-center">
+                <Plus className="w-5 h-5 mr-2" />
+                Add Book
+              </span>
             </Button>
           </div>
 

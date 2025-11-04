@@ -29,9 +29,9 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
       onClick={() => onOpen(book)}
     >
       {/* Liquid glass card */}
-      <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-purple-500/50">
+      <div className="relative bg-white/[0.08] backdrop-blur-2xl rounded-2xl border border-white/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.1)] overflow-hidden transition-all duration-300 hover:shadow-pink-500/50 before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-br before:from-white/20 before:to-transparent before:opacity-50 before:pointer-events-none">
         {/* Book thumbnail */}
-        <div className="aspect-[2/3] relative overflow-hidden bg-gradient-to-br from-purple-900/20 to-blue-900/20">
+        <div className="aspect-[2/3] relative z-10 overflow-hidden bg-gradient-to-br from-purple-900/20 to-blue-900/20">
           <ImageWithFallback
             src={book.thumbnailUrl}
             alt={book.title}
@@ -66,7 +66,7 @@ export function BookCard({ book, onOpen, onDelete, onEdit }: BookCardProps) {
         </div>
 
         {/* Book info */}
-        <div className="p-4 space-y-2">
+        <div className="relative z-10 p-4 space-y-2">
           <h3 className="text-white line-clamp-2 min-h-[3em]">{book.title}</h3>
 
           <div className="flex items-center justify-between">
