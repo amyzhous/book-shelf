@@ -95,18 +95,18 @@ export default function App() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Animated gradient background */}
-      <div className="fixed inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 dark:from-purple-900 dark:via-blue-900 dark:to-indigo-900 transition-colors duration-500">
+      <div className="fixed inset-0 bg-gradient-to-br from-pink-900 via-rose-800 to-pink-700 dark:from-pink-900 dark:via-rose-800 dark:to-pink-700 transition-colors duration-500">
         {/* Dark mode blobs */}
         <div className="absolute inset-0 opacity-30 dark:opacity-30">
-          <div className="absolute top-0 -left-4 w-96 h-96 bg-purple-500 dark:bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-          <div className="absolute top-0 -right-4 w-96 h-96 bg-yellow-500 dark:bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-96 h-96 bg-pink-500 dark:bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+          <div className="absolute top-0 -left-4 w-96 h-96 bg-pink-400 dark:bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+          <div className="absolute top-0 -right-4 w-96 h-96 bg-rose-400 dark:bg-rose-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-96 h-96 bg-fuchsia-400 dark:bg-fuchsia-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
 
         {/* Light mode overlay */}
-        <div className="absolute inset-0 bg-[#6064bf] dark:bg-transparent opacity-100 dark:opacity-0 transition-opacity duration-500">
-          <div className="absolute right-[-50px] top-[-18px] w-[245px] h-[245px] bg-[#FFA5F7] opacity-10 rounded-full blur-3xl"></div>
-          <div className="absolute left-[-110px] bottom-[-50px] w-[245px] h-[245px] bg-[#CAFFA5] opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-[#ffc8dd] dark:bg-transparent opacity-100 dark:opacity-0 transition-opacity duration-500">
+          <div className="absolute right-[-50px] top-[-18px] w-[245px] h-[245px] bg-[#ffafcc] opacity-10 rounded-full blur-3xl"></div>
+          <div className="absolute left-[-110px] bottom-[-50px] w-[245px] h-[245px] bg-[#ffc8dd] opacity-10 rounded-full blur-3xl"></div>
         </div>
       </div>
 
