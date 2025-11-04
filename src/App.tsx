@@ -22,14 +22,27 @@ export interface Book {
 }
 
 export default function App() {
-  const [books, setBooks] = useState<Book[]>([]);
+  const [books, setBooks] = useState<Book[]>(() => {
+    const savedBooks = localStorage.getItem('bookshelf-books');
+    return savedBooks ? JSON.parse(savedBooks) : [];
+  });
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [isNotesDialogOpen, setIsNotesDialogOpen] = useState(false);
   const [editingBook, setEditingBook] = useState<Book | null>(null);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(() => {
+    const savedTheme = localStorage.getItem('bookshelf-theme');
+    return savedTheme ? savedTheme === 'dark' : true;
+  });
 
+  // Save books to localStorage whenever they change
   useEffect(() => {
+    localStorage.setItem('bookshelf-books', JSON.stringify(books));
+  }, [books]);
+
+  // Save theme preference and apply dark mode class
+  useEffect(() => {
+    localStorage.setItem('bookshelf-theme', isDark ? 'dark' : 'light');
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
